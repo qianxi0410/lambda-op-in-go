@@ -10,7 +10,7 @@ func ToInterfaceList(v interface{}) (res []interface{}, err error) {
 	switch vv.Kind() {
 	case reflect.String:
 		for _, v := range vv.String() {
-			res = append(res, rune(v))
+			res = append(res, v)
 		}
 		return res, nil
 	case reflect.Slice:
