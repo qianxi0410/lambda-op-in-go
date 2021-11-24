@@ -30,3 +30,10 @@ stream.Init([]int{1, 2, 3, 4}).Foreach(func(e stream.Elem) {
     fmt.Println(fmt.Sprintf("this is %d", e.(int)))
 })
 ```
+
+### reverse
+
+```go
+stream.Init([]int{1, 2, 3, 4}).Reverse().IntSlice()
+// expect to be [4, 3, 2, 1]
+```
