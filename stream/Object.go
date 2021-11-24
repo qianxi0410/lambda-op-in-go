@@ -11,7 +11,7 @@ type Object struct {
 
 type Elem interface{}
 
-func New(obj interface{}) *Object {
+func Init(obj interface{}) *Object {
 	return &Object{obj: obj, err: nil}
 }
 
