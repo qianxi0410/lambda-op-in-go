@@ -660,6 +660,20 @@ func ToString(v interface{}) (string, error) {
 		return string(v), nil
 	case string:
 		return v, nil
+	case interface{}:
+		resp, err := ToInterfaceList(v)
+		if err != nil {
+			return "", err
+		}
+		rs := make([]rune, 0, len(resp))
+		for i := 0; i < len(resp); i++ {
+			rr, ok := resp[i].(rune)
+			if !ok {
+				return "", fmt.Errorf("cant convert to rune")
+			}
+			rs = append(rs, rr)
+		}
+		return string(rs), nil
 	default:
 		return "", fmt.Errorf("%v[%T] can't convert to string", v, v)
 	}

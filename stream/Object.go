@@ -1,6 +1,8 @@
 package stream
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // wrapper
 type Object struct {
