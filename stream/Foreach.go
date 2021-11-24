@@ -1,6 +1,6 @@
-package lambda
+package stream
 
-import "qianxi/lambda-go/lambda/utils"
+import "qianxi/lambda-go/stream/utils"
 
 func (o *Object) Foreach(fn func(e Elem)) {
 	list, err := utils.ToInterfaceList(o.obj)

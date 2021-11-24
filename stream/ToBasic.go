@@ -1,6 +1,6 @@
-package lambda
+package stream
 
-import "qianxi/lambda-go/lambda/utils"
+import "qianxi/lambda-go/stream/utils"
 
 func (o *Object) Int() int {
 	if o.err != nil {

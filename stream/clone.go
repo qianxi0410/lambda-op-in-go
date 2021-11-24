@@ -1,4 +1,4 @@
-package lambda
+package stream
 
 func (o *Object) clone(obj interface{}, err error) *Object {
 	if err != nil {

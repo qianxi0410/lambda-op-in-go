@@ -1,4 +1,4 @@
-package lambda
+package stream
 
 func (o *Object) Map(f func(idx int, obj Elem) Elem) *Object {
 	objs := make([]interface{}, 0)

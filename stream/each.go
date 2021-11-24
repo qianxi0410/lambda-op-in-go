@@ -1,8 +1,8 @@
-package lambda
+package stream
 
 import (
 	"errors"
-	"qianxi/lambda-go/lambda/utils"
+	"qianxi/lambda-go/stream/utils"
 )
 
 func (o *Object) each(f func(idx int, itm Elem) error) error {

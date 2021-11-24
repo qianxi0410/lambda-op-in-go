@@ -1,4 +1,4 @@
-package lambda
+package stream
 
 import "reflect"
 
