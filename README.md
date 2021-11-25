@@ -26,7 +26,7 @@ ints := stream.Init([]int{1, 2, 3}).Map(func(idx int, e stream.Elem) stream.Elem
 ### foeach
 
 ```go
-stream.Init([]int{1, 2, 3, 4}).Foreach(func(e stream.Elem) {
+stream.Init([]int{1, 2, 3, 4}).Foreach(func(idx int, e stream.Elem) {
     fmt.Println(fmt.Sprintf("this is %d", e.(int)))
 })
 ```

@@ -1,14 +1,10 @@
 package stream
 
-import "qianxi/lambda-go/stream/utils"
-
-func (o *Object) Foreach(fn func(e Elem)) {
-	list, err := utils.ToInterfaceList(o.obj)
-	if err != nil {
-		panic(err)
+func (o *Object) Foreach(f func(idx, e Elem)) {
+	transfer := func(idx int, e Elem) error {
+		f(idx, e)
+		return nil
 	}
 
-	for i := range list {
-		fn(list[i])
-	}
+	o.each(transfer)
 }
