@@ -37,3 +37,12 @@ stream.Init([]int{1, 2, 3, 4}).Foreach(func(e stream.Elem) {
 stream.Init([]int{1, 2, 3, 4}).Reverse().IntSlice()
 // expect to be [4, 3, 2, 1]
 ```
+
+### filter
+
+```go
+is := stream.Init([]int{1, 2, 3, 4}).Filter(func(idx int, e stream.Elem) bool {
+    return e.(int)%2 == 0
+}).IntSlice()
+// expect to be [2, 4]
+```
