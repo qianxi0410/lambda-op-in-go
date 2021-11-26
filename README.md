@@ -46,3 +46,12 @@ is := stream.Init([]int{1, 2, 3, 4}).Filter(func(idx int, e stream.Elem) bool {
 }).IntSlice()
 // expect to be [2, 4]
 ```
+
+### limit
+
+```go
+stream.Init([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}).Limit(5).Foreach(func(idx, e stream.Elem) {
+    fmt.Println(e)
+})
+// 1 2 3 4 5
+```
