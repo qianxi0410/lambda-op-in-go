@@ -55,3 +55,12 @@ stream.Init([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}).Limit(5).Foreach(func(idx, e s
 })
 // 1 2 3 4 5
 ```
+
+### sorted
+
+```go
+is := stream.Init([]int{1, -1, 2, -3}).Sorted(func(e1, e2 stream.Elem) bool {
+    return e1.(int) <= e2.(int)
+}).IntSlice()
+// expect to be [-3, -1, 1, 2]
+```
