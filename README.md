@@ -64,3 +64,10 @@ is := stream.Init([]int{1, -1, 2, -3}).Sorted(func(e1, e2 stream.Elem) bool {
 }).IntSlice()
 // expect to be [-3, -1, 1, 2]
 ```
+
+### index
+
+```go
+stream.Init([]int{1, 2, 3, 4}).Index(2).Int()
+// expect to be 3
+```
