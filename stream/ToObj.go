@@ -171,3 +171,27 @@ func (o *Object) ObjectSliceWithErr(resp interface{}) (err error) {
 
 	return nil
 }
+
+func (o *Object) Expect(expectVal interface{}) interface{} {
+	if o.err != nil {
+		panic(o.err)
+	}
+	v, err := utils.ToExpectTypeInterface(o.obj, expectVal)
+	if err != nil {
+		panic(err)
+	}
+	return v
+}
+
+func (o *Object) ExpectWithErr(expectVal interface{}) (v interface{}, err error) {
+	defer func() {
+		if r := recover(); r != nil {
+			err = fmt.Errorf("err: %v", r)
+		}
+	}()
+
+	if o.err != nil {
+		return nil, o.err
+	}
+	return utils.ToExpectTypeInterface(o.obj, expectVal)
+}
