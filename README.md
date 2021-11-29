@@ -71,3 +71,13 @@ is := stream.Init([]int{1, -1, 2, -3}).Sorted(func(e1, e2 stream.Elem) bool {
 stream.Init([]int{1, 2, 3, 4}).Index(2).Int()
 // expect to be 3
 ```
+
+### chunk
+
+```go
+stream.Init([]int{1, 2, 3, 4, 5}).Chunk(10).Expect([][]int{})
+// expect to be [[1, 2, 3, 4, 5]]
+
+stream.Init([]int{1, 2, 3, 4, 5}).Chunk(2).Expect([][]int{})
+// expect to be [[1, 2], [3, 4], [5]]
+```
